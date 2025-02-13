@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang=fr>
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetArt_1</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Net Art Glitch</title>
 </head>
-
-<body> 
-    <div>
-        <p>HA</p>
+<body>
+    <div class="container">
+        <script>
+            for (let i = 0; i < 20; i++) {
+                let square = document.createElement("div");
+                square.classList.add("square");
+                square.style.left = Math.random() * window.innerWidth + "px";
+                square.style.top = Math.random() * window.innerHeight + "px";
+                document.querySelector(".container").appendChild(square);
+            }
+        </script>
     </div>
 </body>
-
 </html>
