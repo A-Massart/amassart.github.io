@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Net Art Glitch</title>
+    <title>Net Art Minimal</title>
     <style>
         body {
             margin: 0;
@@ -11,55 +11,24 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(45deg, #000, #111, #222);
-            overflow: hidden;
-            animation: bgAnimation 5s infinite alternate;
+            background: linear-gradient(45deg, #ff0000, #0000ff);
         }
 
-        @keyframes bgAnimation {
-            0% { background: linear-gradient(45deg, #000, #222, #444); }
-            100% { background: linear-gradient(45deg, #222, #444, #666); }
+        .circle {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s, background 0.3s;
         }
 
-        .container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-        }
-
-        .square {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 0, 255, 0.7);
-            transition: transform 0.2s, background 0.3s;
-            mix-blend-mode: difference;
-            animation: glitch 0.5s infinite alternate ease-in-out;
-        }
-
-        @keyframes glitch {
-            0% { transform: translate(0, 0); opacity: 1; }
-            50% { transform: translate(5px, -5px); opacity: 0.5; }
-            100% { transform: translate(-5px, 5px); opacity: 1; }
-        }
-
-        .square:hover {
-            background: cyan;
-            transform: scale(1.3);
+        .circle:hover {
+            transform: scale(1.5);
+            background: yellow;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <script>
-            for (let i = 0; i < 20; i++) {
-                let square = document.createElement("div");
-                square.classList.add("square");
-                square.style.left = Math.random() * window.innerWidth + "px";
-                square.style.top = Math.random() * window.innerHeight + "px";
-                document.querySelector(".container").appendChild(square);
-            }
-        </script>
-    </div>
+    <div class="circle"></div>
 </body>
 </html>
