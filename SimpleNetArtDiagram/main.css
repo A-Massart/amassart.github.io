@@ -1,0 +1,127 @@
+/************ FONTS ************/
+.tiny5-regular {
+    font-family: "Tiny5", serif;
+    font-weight: 400;
+    font-style: normal;
+  }  
+  
+
+/****************************/
+  
+:root {
+    --heightButton: 150px;
+    --widthButton: 300px;
+}
+
+
+/****************************/
+
+*{
+    font-family: "Tiny5";
+}
+
+.computerScreen img {
+    position: absolute;
+    top: 0;
+    left: 14vw;
+    height: 100vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 0;
+    transition: opacity 1s ease;
+}
+
+.computerScreen.end {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+button {
+    position: absolute;
+    top: 190px;
+    left: 480px;
+    width: var(--widthButton);
+    height: var(--heightButton);
+
+    font-size: 200px;
+    color: blue;
+    background-color: transparent;
+    border: none;
+
+    z-index: 1000;
+
+    transition: transform 0.25s, opacity 1s;
+}
+
+button:hover {
+    transform: scale(1.25);
+}
+
+.storm video {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0; /* Cachée au début */
+    transition: opacity 1s ease-in; /* Apparition fluide */
+}
+
+/* Hide button when clicked */
+.hideButton {
+    pointer-events: none;
+    animation: zoomInButton 2s forwards;
+}
+
+@keyframes zoomInButton {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(50);
+        opacity: 0;
+    }
+}
+
+/* Animation for the screen transition */
+.transitionIn {
+    animation: zoomInScreenStart 2s forwards;
+}
+
+@keyframes zoomInScreenStart {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5) translateY(-250px);
+        opacity: 0;
+    }
+}
+
+.computerScreen.start {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-in;
+}
+
+/* Animation pour zoomer l'écran après la vidéo */
+.transitionInEnd {
+    animation: zoomInScreenEnd 2s forwards;
+}
+
+@keyframes zoomInScreenEnd {
+    0% {
+        transform: scale(0.05);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0.9999);
+        opacity: 1;
+    }
+}
