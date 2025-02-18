@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Candle</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body {
+            background-image: url("../src/graphismes/intro/scene1_fond.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Animated Intro */
+        .intro1_animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            animation: intro1 4s infinite linear;
+            z-index: 1000;
+        }
+
+        @keyframes intro1 {
+            0% {
+                background-image: url("../src/graphismes/intro/scene1_jaune1.png");
+            }
+            25% {
+                background-image: url("../src/graphismes/intro/scene1_jaune2.png");
+            }
+            50% {
+                background-image: url("../src/graphismes/intro/scene1_jaune3.png");
+            }
+            75% {
+                background-image: url("../src/graphismes/intro/scene1_jaune4.png");
+            }
+            100% {
+                background-image: url("../src/graphismes/intro/scene1_jaune1.png");
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <button class="intro" onclick="location.href='intro2.html'">Continuer</button>
+    <div class="intro1_animation"></div>
+</body>
+</html>

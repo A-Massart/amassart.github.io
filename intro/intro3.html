@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Candle</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body {
+            background-image: url("../src/graphismes/intro/scene3_foretFond.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .intro3_foret {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            animation: intro3_foret 4s infinite linear;
+            z-index: 1000;
+        }
+
+        @keyframes intro3_foret {
+            0%{
+                background-image: url(../src/graphismes/intro/scene3_foret1.png);
+            }
+
+            25%{
+                background-image: url(../src/graphismes/intro/scene3_foret2.png);
+            }
+
+            50%{
+                background-image: url(../src/graphismes/intro/scene3_foret1.png);
+            }
+
+            75%{
+                background-image: url(../src/graphismes/intro/scene3_foret2.png);
+            }
+
+            100%{
+                background-image: url(../src/graphismes/intro/scene3_foret1.png);
+            }
+        }
+
+        .intro3_monstres {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            animation: intro3_monstres 4s infinite linear;
+            z-index: 1000;
+        }
+
+        @keyframes intro3_monstres {
+            0% {
+                background-image: none;
+            }
+
+            25% {
+                /* Monstres */
+                background-image: url(../src/graphismes/intro/scene3_monstres2.png);
+            }
+
+            50% {
+                /* Monstres */
+                background-image: url(../src/graphismes/intro/scene3_monstres1.png), url(../src/graphismes/intro/scene3_monstres1.png);
+            }
+
+            75% {
+                /* Monstres */
+                background-image: url(../src/graphismes/intro/scene3_monstres1.png);
+            }
+
+            100% {
+                /* Monstres */
+                background-image: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <button class="intro" onclick="location.href='intro4.html'">Continuer</button>
+    <div class="intro3_foret"></div>
+    <div class="intro3_monstres"></div>
+
+</body>
+</html>

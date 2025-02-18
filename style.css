@@ -1,0 +1,187 @@
+/*********** FONTS ***************/
+@font-face {
+    font-family: "PicNic";
+    src: url(src/fonts/picnic.otf);
+}
+/*********** GÉNÉRAL ******************/
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/********** CADRE DU JEU ************/
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#game-area {
+    position: relative;
+    width: 1000px;
+    height: 645px;
+    overflow: hidden;
+}
+
+#dark-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 0) 50px, rgba(0, 0, 0, 1) 150px);
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0) 50px, rgba(0, 0, 0, 1) 150px);
+    z-index: 5;
+}
+
+/************* ÉLÉMÉNTS VISUELS DU JEU *****************/
+
+#candle-bar, #score, #game-over, #wind-warning{
+    position: absolute;
+    z-index: 10; /* Plus haut que le dark layer */
+}
+
+#wind-warning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 10px;
+    display: none; /* Initially hidden */
+    font-size: 18px;
+    color: white;
+}
+
+#candle-bar {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 15px;
+    background: rgb(0, 0, 0);
+    border: 0.5px solid gold;
+}
+
+#candle-health {
+    height: 100%;
+    width: 100%;
+    background: gold;
+}
+
+#game-over {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 65px;
+    background: red;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#score {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 18px;
+}
+
+/********** ÉLÉMENTS INTERACTIFS DU JEU *****************/
+.wax {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url("src/wax.png");
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.monster {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url("src/monster.png");
+    background-size: cover; /* Ensure the image fits the element */
+    border-radius: 50%;
+}
+
+#wall {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: gray;
+    position: absolute;
+}
+
+#halo {
+    position: absolute;
+    pointer-events: none;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgb(255, 224, 99, 0.8)50%, rgba(0, 0, 0, 0)70%);
+    border-radius: 20%;
+    /* box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6); */
+    transform: translate(-50%, -50%);
+    opacity: 0.5
+    ;
+}
+
+.blue-circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: blue;
+    cursor: pointer;
+}
+
+
+/**************** INTRODUCTION *****************/
+
+button.intro {
+    font-family: "PicNic";
+
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+    z-index: 1100;
+}
+
+button.intro:hover {
+    background-color: rgb(44, 44, 44);
+}
+
+h1.intro, p.intro{
+    font-family: "PicNic";
+}
+
+h1.intro{
+    font-size: 200px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+p.intro{
+    font-size: 20px;
+    margin-top: 200px;
+    margin-left: 20px;
+}

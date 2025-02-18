@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Candle</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body {
+            background-image: url("../src/graphismes/intro/scene2_fond.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .intro2_animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            animation: intro2 4s infinite linear;
+            z-index: 1000;
+        }
+
+        @keyframes intro2 {
+            0% {
+                background-image: url("../src/graphismes/intro/scene2_jaune1.png");
+            }
+            25% {
+                background-image: url("../src/graphismes/intro/scene2_jaune2.png");
+            }
+            50% {
+                background-image: url("../src/graphismes/intro/scene2_jaune3.png");
+            }
+            75% {
+                background-image: url("../src/graphismes/intro/scene2_jaune4.png");
+            }
+            100% {
+                background-image: url("../src/graphismes/intro/scene2_jaune1.png");
+            }
+        }
+
+        .intro2_exclam{
+            position: absolute;
+            right: 100px;
+            width: 250px;
+            height: 150px;
+
+            rotate: 120deg;
+
+            background-image: url("../src/graphismes/intro/scene2_exclamation.png");
+            background-size: cover;
+            background-position: center;
+
+            animation: exclamation 1s infinite linear;
+
+            z-index: 1000;
+        }
+
+        @keyframes exclamation {
+            0% {
+                top: 60px;
+            }
+            50% {
+                top: 65px;
+            }
+            100% {
+                top: 60px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <button class="intro" onclick="location.href='intro3.html'">Continuer</button>
+    <div class="intro2_animation"></div>
+    <div class="intro2_exclam"></div>
+</body>
+</html>

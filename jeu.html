@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Candle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+
+        <div id="wind-warning">-></div>
+
+        <div id="game-over">Game Over</div>
+
+        <div id="game-area">
+            <div id="candle-bar">
+                <div id="candle-health"></div>
+            </div>
+
+            <div id="wall"></div>
+
+            <div id="wax-container"></div>
+
+            <div id="score">Score: <span id="time">0</span> sec</div>
+        </div>
+
+        <div id="dark-cover"></div>
+
+    </div>
+
+    <div id="halo"></div>
+    <video id="wind-video" style="display: none;" autoplay>
+        <source src="src/wind-blowing.mp4" type="video/mp4">
+    </video>
+
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
