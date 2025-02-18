@@ -83,7 +83,7 @@ button:hover {
         opacity: 1;
     }
     100% {
-        transform: scale(50);
+        transform: scale(50) translateY(-250px);
         opacity: 0;
     }
 }
