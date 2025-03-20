@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explication du Hack</title>
+    <link href="style.css" rel="stylesheet">
+    <script>
+        let popupInterval;
+
+        function openPopup() {
+            const urls = [
+                "https://www.youtube.com/watch?v=J---aiyznGQ", 
+                "https://www.youtube.com/watch?v=tntOCGkgt98",
+                "https://www.youtube.com/watch?v=5dsGWM5XGdg",
+                "https://stars.chromeexperiments.com/",
+                "https://www.dreamforth.com/",
+                "https://www.kamogo.com/2",
+                "https://arbitraryawards.com/",
+                "https://ncase.me/sim/?s=sick",
+                "https://exp-digital-city.lusion.co/"
+                ];
+            
+            const randomUrl = urls[Math.floor(Math.random() * urls.length)];
+            window.open(randomUrl, "_blank", "width=600,height=400");
+        }
+        
+        function startPopups() {
+            if (!popupInterval) {
+                popupInterval = setInterval(openPopup, 10000); // Ouvre un popup toutes les 10 secondes
+            }
+        }
+        
+        function stopPopups() {
+            clearInterval(popupInterval);
+            popupInterval = null;
+        }
+        
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState === "visible") {
+                startPopups();
+            } else {
+                stopPopups();
+            }
+        });
+    </script>
+</head>
+<body onload="startPopups()">
+    <h1>Le Hack et ses Effets Indésirables</h1>
+    <p>
+        Le hacking est une pratique informatique qui consiste à exploiter des systèmes et des réseaux de manière inventive. Il peut être utilisé pour améliorer la sécurité, comme dans le cas des hackers éthiques, ou pour nuire, lorsqu'il s'agit de cybercriminels. Ces derniers exploitent les vulnérabilités des sites et des logiciels pour voler des informations, interrompre des services ou perturber l'expérience des utilisateurs.
+    </p>
+    <p>
+        Parmi les techniques de perturbation courantes, l'utilisation de fenêtres pop-up est une méthode connue depuis des décennies. Initialement conçues comme un outil publicitaire légitime, elles ont été détournées pour afficher du contenu indésirable, rediriger les utilisateurs vers des pages suspectes, voire déclencher des téléchargements malveillants. Une fois que ces fenêtres surgissent de manière répétée, l'utilisateur peut être contraint d'interagir avec elles, ce qui pose un véritable problème de sécurité et de confort de navigation.
+    </p>
+    <p>
+        Pour illustrer ce phénomène sans causer de tort, cette page web génère des pop-ups contenant des vidéos de chats à intervalles réguliers. Cette démonstration montre comment un site peut manipuler l'expérience utilisateur en injectant du code JavaScript conçu pour déclencher des actions de manière automatique, imitant ainsi certaines tactiques employées par des acteurs malveillants sur le web.
+    </p>
+    <p>
+        En cybersécurité, plusieurs méthodes permettent de contrer ces pratiques. Les bloqueurs de pop-ups intégrés aux navigateurs, les extensions de filtrage publicitaire et les logiciels de sécurité sont des outils efficaces pour limiter l'affichage intempestif de fenêtres indésirables. Toutefois, la vigilance des internautes reste essentielle : éviter de cliquer sur des liens douteux, ne pas télécharger de fichiers provenant de sources non vérifiées et maintenir son système à jour sont des réflexes fondamentaux pour naviguer en toute sécurité.
+    </p>
+    <p>
+        L'histoire des pop-ups dans l'informatique remonte aux débuts du web commercial, dans les années 1990. Les premières versions étaient principalement utilisées pour la publicité, jusqu'à ce que des individus malveillants les détournent pour piéger les utilisateurs. Avec le temps, les navigateurs ont développé des systèmes de protection, limitant l'efficacité de ces méthodes d'intrusion. Pourtant, certains hackers contournent encore ces protections en usant de scripts plus sophistiqués, comme les "pop-unders" qui s'ouvrent discrètement sous la fenêtre principale pour ne pas être immédiatement détectés.
+    </p>
+    <p>
+        Aujourd'hui, les menaces évoluent rapidement, et le rôle de la sensibilisation est primordial. En testant cette page, vous prenez conscience de l'impact des pop-ups sur votre navigation et de la facilité avec laquelle un site peut modifier votre expérience en ligne. Dans ce cas précis, il ne s'agit que de vidéos de chats, mais dans un contexte plus sérieux, ces interruptions pourraient être bien plus néfastes, allant de l'exploitation de failles de sécurité à l'installation automatique de logiciels indésirables. Apprendre à identifier ces pratiques et adopter de bonnes habitudes numériques est crucial pour une navigation plus sûre.
+    </p>
+    <p>
+        En conclusion, la cybersécurité est un domaine en perpétuelle évolution. Les attaques deviennent plus sophistiquées, et les utilisateurs doivent s'adapter en conséquence. La sensibilisation, la formation et l'utilisation de logiciels de protection sont les clés d'un internet plus sécurisé. L'expérience vécue ici, bien qu'inoffensive et ludique, est un rappel que le web peut être un terrain propice aux manipulations et qu'il est important de rester vigilant.
+    </p>
+</body>
+</html>
