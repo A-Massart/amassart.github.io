@@ -9,54 +9,63 @@
 /****************************/
   
 :root {
-    --heightButton: 150px;
-    --widthButton: 300px;
+    --heightButton: 10vh;
+    --widthButton: 30vw;
 }
 
-
-/****************************/
-
-*{
-    font-family: "Tiny5";
+* {
+    font-family: "Tiny5", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.computerScreen img {
-    position: absolute;
-    top: 0;
-    left: 14vw;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 0;
-    transition: opacity 1s ease;
-}
-
-.computerScreen.end {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 1s ease-in;
+    overflow: hidden;
+    position: relative;
 }
 
 button {
     position: absolute;
-    top: 190px;
-    left: 480px;
-    width: var(--widthButton);
-    height: var(--heightButton);
-
-    font-size: 200px;
+    top: calc(50% - var(--heightButton));
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* width: var(--widthButton);
+    height: var(--heightButton); */
+    font-size: 15vw;
     color: blue;
     background-color: transparent;
     border: none;
-
-    z-index: 1000;
-
     transition: transform 0.25s, opacity 1s;
+    z-index: 2;
 }
 
 button:hover {
-    transform: scale(1.25);
+    transform: scale(1.25) translate(-130px, -50px);
+}
+
+.computerScreen img {
+    width: 80vw;
+    max-height: 80vh;
+    display: block;
+    margin: auto;
+    transition: opacity 1s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.computerScreen.end {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 
 .storm video {
@@ -67,11 +76,11 @@ button:hover {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    opacity: 0; /* Cachée au début */
-    transition: opacity 1s ease-in; /* Apparition fluide */
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    z-index: 0;
 }
 
-/* Hide button when clicked */
 .hideButton {
     pointer-events: none;
     animation: zoomInButton 2s forwards;
@@ -83,12 +92,11 @@ button:hover {
         opacity: 1;
     }
     100% {
-        transform: scale(50) translateY(-250px);
+        transform: scale(50);
         opacity: 0;
     }
 }
 
-/* Animation for the screen transition */
 .transitionIn {
     animation: zoomInScreenStart 2s forwards;
 }
@@ -99,18 +107,11 @@ button:hover {
         opacity: 1;
     }
     100% {
-        transform: scale(5) translateY(-250px);
+        transform: scale(5) translateY(-100px);
         opacity: 0;
     }
 }
 
-.computerScreen.start {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 1s ease-in;
-}
-
-/* Animation pour zoomer l'écran après la vidéo */
 .transitionInEnd {
     animation: zoomInScreenEnd 2s forwards;
 }
@@ -121,7 +122,25 @@ button:hover {
         opacity: 0;
     }
     100% {
-        transform: scale(0.9999);
+        transform: scale(1);
         opacity: 1;
+    }
+}
+
+/* Looping logic */
+.reset {
+    opacity: 1 !important;
+    display: block !important;
+}
+
+@media (max-width: 768px) {
+    button {
+        font-size: 15vw;
+        width: 50vw;
+
+        top: calc(50vh - (var(--heightButton) /2));
+    }
+    .computerScreen img {
+        width: 95vw;
     }
 }
