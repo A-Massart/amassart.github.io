@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return videos[Math.floor(Math.random() * videos.length)];
     }
 
-    function resetExperience() {
+    function resetExperience() {   
         endScreen.classList.add("transitionInEnd");
-    
+ 
         setTimeout(() => {
             videoElement.pause();
             videoElement.currentTime = 0;
@@ -40,9 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
             enterButton.classList.remove("hideButton");
             enterButton.style.opacity = "1";
             enterButton.style.visibility = "visible";
+            enterButton.style.transform = "translate(-50%, -50%) scale(1)";
+            console.log("position reset");
+
+
     
             startScreen.classList.remove("transitionIn");
-        }, 1500); // ⏳ Temps de l’animation avant la réinitialisation
+        }, 2000);
     }
     
     enterButton.addEventListener("click", function () {
@@ -65,8 +69,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     videoElement.addEventListener("ended", function () {
         stormDiv.style.display = "none";
+        endScreen.style.display = "flex";
         endScreen.style.opacity = "1";
-        endScreen.style.visibility = "visible";
         resetExperience();
     });
+
+    
 });
